@@ -15,7 +15,7 @@ const QuoteGenerator = () => {
         {quote: "Do one thing every day that scares you." , author: "Eleanor Roosevelt"},
         ];
     
-    const [quote, setQuote] = useState({});
+    const [quote, setQuote] = useState(quote[0]);
 
     const generateRandomNumber = (min, max) => {
         min = Math.ceil(min);
@@ -29,8 +29,8 @@ const QuoteGenerator = () => {
 
     return(
         <div className="quote-generator">
-            <p>{quote.quote}</p>
-            <p>{quote.author}</p>
+            <p>"{quote.quote}"</p>
+            <p>- {quote.author}</p>
             <button onClick={() => handleClick(generateRandomNumber(0, quotes.length-1))}>New quote!</button>
         </div>
     );
