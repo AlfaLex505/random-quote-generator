@@ -17,17 +17,21 @@ const QuoteGenerator = () => {
     
     const [quote, setQuote] = useState({});
 
+    const generateRandomNumber = (min, max) => {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    };
 
-
-    const handleClick = () => {
-        setQuote(quotes[0]);
-    }
+    const handleClick = (index) => {
+        setQuote(quotes[index]);
+    };
 
     return(
         <div className="quote-generator">
             <p>{quote.quote}</p>
             <p>{quote.author}</p>
-            <button onClick={() => handleClick()}>New quote!</button>
+            <button onClick={() => handleClick(generateRandomNumber(0, quotes.length-1))}>New quote!</button>
         </div>
     );
 }
