@@ -4,7 +4,10 @@ import QuoteGenerator from "./components/quoteGenerator";
 
 function App() {
   return (
-    <QuoteGenerator/>
+    <div className='app'>
+      <QuoteGenerator/>
+    </div>
+
   );
 }
 

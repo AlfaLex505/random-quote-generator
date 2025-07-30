@@ -22,10 +22,10 @@ const QuoteGenerator = () => {
     };
 
     return(
-        <div className="quote-generator">
-            <p>"{quote.quote}"</p>
-            <p>- {quote.author}</p>
-            <button onClick={() => getNewQuote()}>New quote!</button>
+        <div className="quote-box">
+            <p className="quote-text">"{quote.quote}"</p>
+            <p className="quote-author">- {quote.author}</p>
+            <button className="quote-button" onClick={() => getNewQuote()}>New quote!</button>
         </div>
     );
 }
