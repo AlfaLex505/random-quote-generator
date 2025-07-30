@@ -15,12 +15,19 @@ const QuoteGenerator = () => {
         {quote: "Do one thing every day that scares you." , author: "Eleanor Roosevelt"},
         ];
     
+    const [quote, setQuote] = useState({});
+
+
+
+    const handleClick = () => {
+        setQuote(quotes[0]);
+    }
 
     return(
         <div className="quote-generator">
-            <p>The quote has to be here!</p>
-            <p>The author has to be here!</p>
-            <button>New quote!</button>
+            <p>{quote.quote}</p>
+            <p>{quote.author}</p>
+            <button onClick={() => handleClick()}>New quote!</button>
         </div>
     );
 }
